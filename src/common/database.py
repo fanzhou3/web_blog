@@ -4,9 +4,9 @@ import pymongo
 
 
 class Database(object):
-    #URI = os.environ.get("MONGOLAB_URI")
+    URI = os.environ.get("MONGOLAB_URI")
     DATABASE = None
-    URI = "mongodb://127.0.0.1:27017"
+    #URI = "mongodb://127.0.0.1:27017"
 
 
     @staticmethod
