@@ -28,8 +28,7 @@ def register_template():
 
 @app.before_first_request
 def initialize_database():
-    initialize()
-
+    Database.initialize()
 
 @app.route('/auth/login', methods=['POST'])
 def login_user():
