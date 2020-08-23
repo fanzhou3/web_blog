@@ -5,9 +5,8 @@ import pymongo
 
 class Database(object):
     #URI = "mongodb://<fanzhou>:<fanzhou3>@ds041561.mlab.com:41561/heroku_g3q7pzwj"
-    URI=os.environ.get("MONGOLAB_URI")
     #URI = "mongodb://127.0.0.1:27017"
-
+    URI = os.environ.get("MONGOLAB_URI")
 
     @staticmethod
     def initialize():
