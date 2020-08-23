@@ -14,10 +14,9 @@ def initialize():
     client = pymongo.MongoClient(Database.URI)
     Database.DATABASE = client.get_default_database()
     #Database.DATABASE = client['fullstack']
-     #Database.DATABASE = client.get_default_database()
 
 
-@staticmethod
+    @staticmethod
     def insert(collection, data):
         Database.DATABASE[collection].insert(data)
 
