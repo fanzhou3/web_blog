@@ -30,6 +30,7 @@ def register_template():
 def initialize_database():
     Database.initialize()
 
+
 @app.route('/auth/login', methods=['POST'])
 def login_user():
     email = request.form['email']
