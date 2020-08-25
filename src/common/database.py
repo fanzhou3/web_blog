@@ -4,7 +4,7 @@ import pymongo
 
 
 class Database(object):
-    URI=osenviron.get("MONGODB_URI")
+    URI=os.environ.get("MONGODB_URI")
     #URI = os.environ.get("MONGOLAB_URI")
     DATABASE = None
    # URI="mongodb://fanzhou:fanzhou3@ds041561.mlab.com:41561/heroku_g3q7pzwj"
