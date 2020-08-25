@@ -4,7 +4,8 @@ import pymongo
 
 
 class Database(object):
-    URI=os.environ.get("MONGODB_URI")
+    URI = "mongodb+srv://fanzhou:fanzhou3@cluster0.wkwww.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    #URI=os.environ.get("MONGODB_URI")
     #URI = os.environ.get("MONGOLAB_URI")
     DATABASE = None
    # URI="mongodb://fanzhou:fanzhou3@ds041561.mlab.com:41561/heroku_g3q7pzwj"
@@ -14,7 +15,7 @@ class Database(object):
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client['heroku_g3q7pzwj']
+        Database.DATABASE = client.get_database()
         #Database.DATABASE = client.get_default_database()    client['fullstack']  client['heroku_g3q7pzwj']
 
 
