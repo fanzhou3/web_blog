@@ -4,7 +4,7 @@ import pymongo
 
 
 class Database(object):
-    URI = "mongodb+srv://fanzhou:fanzhou3@cluster0.wkwww.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    URI = "mongodb+srv://fanzhou:fanzhou3@cluster0.wkwww.mongodb.net/web-blog?retryWrites=true&w=majority"
     #URI=os.environ.get("MONGODB_URI")
     #URI = os.environ.get("MONGOLAB_URI")
     DATABASE = None
