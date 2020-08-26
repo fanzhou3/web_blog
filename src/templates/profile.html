@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Hello {{ email }}</h1>
+
 
  <div style="text-align:center;">
+       <h1>      Hello {{ email }}</h1>
 <p><a class="btn btn-primary btn-lg" href="{{ url_for('create_new_blog') }}" role="button">Create blog</a></p>
 <p><a class="btn btn-primary btn-lg" href="{{ url_for('user_blogs') }}" role="button">Read blogs</a></p>
 </div>

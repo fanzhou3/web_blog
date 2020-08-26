@@ -12,6 +12,8 @@ class Blog(object):
         self.description = description
         self._id = uuid.uuid4().hex if _id is None else _id
 
+
+
     def new_post(self, title, content, date=datetime.datetime.utcnow()):
         post = Post(blog_id=self._id,
                     title=title,

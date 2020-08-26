@@ -2,8 +2,7 @@ from src.common.database import Database
 from src.models.blog import Blog
 from src.models.post import Post
 from src.models.user import User
-
-
+from src.models.decorators import requires_login
 
 from flask import Flask, render_template, request, session, make_response
 
@@ -56,6 +55,7 @@ def register_user():
 
 @app.route('/blogs/<string:user_id>')
 @app.route('/blogs')
+@requires_login
 def user_blogs(user_id=None):
     if user_id is not None:
         user = User.get_by_id(user_id)
@@ -68,6 +68,7 @@ def user_blogs(user_id=None):
 
 
 @app.route('/blogs/new', methods=['POST', 'GET'])
+@requires_login
 def create_new_blog():
     if request.method == 'GET': # the user just arrive at the end point
         return render_template('new_blog.html')
@@ -103,6 +104,11 @@ def create_new_post(blog_id):
         new_post.save_to_mongo()
 
         return make_response(blog_posts(blog_id))
+
+@app.route('/logout')
+def logout():
+    session['email'] = None
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
